@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentista Juárez - Clínica Odontológica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(13, 148, 136, 0.8), rgba(15, 118, 110, 0.85)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d9488', // Teal 600
+                        secondary: '#0f766e', // Teal 700
+                        accent: '#ccfbf1', // Teal 100
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="bg-primary text-white p-2 rounded-lg group-hover:bg-secondary transition">
+                        <i data-lucide="smile" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800 tracking-tight">Vu <span class="text-primary">Dental</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary font-medium transition">Inicio</a>
+                    <a href="#servicios" class="text-gray-600 hover:text-primary font-medium transition">Servicios</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-primary font-medium transition">Nosotros</a>
+                    <a href="#testimonios" class="text-gray-600 hover:text-primary font-medium transition">Testimonios</a>
+                    <a href="#contacto" class="bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-secondary transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Agendar Cita
+                    </a>
+                </div>
+
+                <!-- Mobile Button -->
+                <button class="md:hidden text-gray-600 hover:text-primary focus:outline-none" onclick="toggleMenu()">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#inicio" class="text-gray-600 hover:text-primary font-medium" onclick="toggleMenu()">Inicio</a>
+                <a href="#servicios" class="text-gray-600 hover:text-primary font-medium" onclick="toggleMenu()">Servicios</a>
+                <a href="#nosotros" class="text-gray-600 hover:text-primary font-medium" onclick="toggleMenu()">Nosotros</a>
+                <a href="#testimonios" class="text-gray-600 hover:text-primary font-medium" onclick="toggleMenu()">Testimonios</a>
+                <a href="#contacto" class="bg-primary text-white px-4 py-2 rounded-lg text-center font-semibold" onclick="toggleMenu()">Agendar Cita</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center pt-20 relative">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="md:w-2/3 lg:w-1/2">
+                <div class="inline-block bg-accent text-primary px-4 py-1 rounded-full text-sm font-semibold mb-4 animate-fade-in-up">
+                    ✨ Nueva tecnología sin dolor
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Tu sonrisa perfecta comienza aquí.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed">
+                    En Dentista Juárez, combinamos experiencia clínica con un ambiente relajado y moderno para cuidar de la salud bucal de toda tu familia.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contacto" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg text-lg text-center">
+                        Reserva tu Cita
+                    </a>
+                    <a href="#servicios" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-primary transition text-lg text-center flex items-center justify-center gap-2">
+                        Ver Servicios <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Wave -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-[100px] md:h-[150px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f9fafb"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Strip -->
+    <div class="container mx-auto px-6 -mt-12 relative z-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg flex items-center gap-4 border-b-4 border-primary">
+                <div class="bg-accent p-3 rounded-full text-primary">
+                    <i data-lucide="clock" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Horario Extendido</h4>
+                    <p class="text-sm text-gray-500">Lun - Sáb: 8am - 8pm</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg flex items-center gap-4 border-b-4 border-primary">
+                <div class="bg-accent p-3 rounded-full text-primary">
+                    <i data-lucide="phone" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Llámanos</h4>
+                    <p class="text-sm text-gray-500">+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg flex items-center gap-4 border-b-4 border-primary">
+                <div class="bg-accent p-3 rounded-full text-primary">
+                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Ubicación</h4>
+                    <p class="text-sm text-gray-500">Av. Principal 123, Centro</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-primary font-semibold uppercase tracking-wider mb-2">Nuestros Tratamientos</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Cuidado dental integral para ti</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300 group text-center border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-accent text-primary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="sparkles" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Limpieza y Blanqueamiento</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Elimina manchas y sarro para una sonrisa brillante y saludable con tecnología láser.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300 group text-center border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-accent text-primary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Ortodoncia Invisible</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Alinea tus dientes sin que nadie lo note con nuestros alineadores transparentes.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300 group text-center border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-accent text-primary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="heart-pulse" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Implantes Dentales</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Recupera la funcionalidad completa de tu boca con implantes duraderos y naturales.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300 group text-center border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-accent text-primary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Odontopediatría</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Atención especializada para los más pequeños en un ambiente divertido y seguro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-accent rounded-full opacity-50"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-primary rounded-full opacity-10"></div>
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Dr. Vu y Equipo" class="relative rounded-2xl shadow-2xl z-10 w-full h-96 object-cover">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-primary font-semibold uppercase tracking-wider mb-2">Sobre Dentista Juárez</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Comprometidos con la excelencia dental.</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Fundada por el Dr. Flavio Ángeles, nuestra clínica nació con una misión simple: transformar la visita al dentista en una experiencia positiva. 
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Utilizamos tecnología de vanguardia como radiografías digitales de baja radiación y escáneres 3D, asegurando diagnósticos precisos y tratamientos menos invasivos.
+                    </p>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-primary w-5 h-5"></i>
+                            <span class="text-gray-700">Más de 15 años de experiencia.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-primary w-5 h-5"></i>
+                            <span class="text-gray-700">Materiales de primera calidad.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-primary w-5 h-5"></i>
+                            <span class="text-gray-700">Atención de urgencias 24/7.</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contacto" class="text-primary font-bold hover:text-secondary flex items-center gap-2 group">
+                        Conoce al equipo <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-20 bg-secondary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Lo que dicen nuestros pacientes</h2>
+                <p class="text-teal-100">Más de 10,000 sonrisas transformadas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="italic mb-6 text-gray-100">"Tenía pánico de ir al dentista, pero el equipo de Flavio Ángeles fue increíblemente amable y paciente. ¡Mi nueva sonrisa es perfecta!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-secondary font-bold">MC</div>
+                        <div>
+                            <h4 class="font-bold">María Clara</h4>
+                            <span class="text-xs text-teal-200">Paciente de Ortodoncia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="italic mb-6 text-gray-100">"Excelente atención y tecnología. Me hicieron un implante en tiempo récord y sin dolor. 100% recomendados."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-secondary font-bold">JP</div>
+                        <div>
+                            <h4 class="font-bold">Juan Pérez</h4>
+                            <span class="text-xs text-teal-200">Paciente de Implantes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="italic mb-6 text-gray-100">"Llevo a mis hijos aquí desde hace 3 años. Les encanta venir y ya no tienen miedo. El ambiente es genial."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-secondary font-bold">LR</div>
+                        <div>
+                            <h4 class="font-bold">Lucía Rodríguez</h4>
+                            <span class="text-xs text-teal-200">Mamá de 2 pacientes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id="contacto" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Form Info -->
+                <div class="lg:w-2/5 bg-primary p-10 text-white flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
+                        <p class="text-teal-100 mb-8">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <i data-lucide="phone" class="w-6 h-6 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">Teléfono</h5>
+                                    <p class="text-teal-100">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i data-lucide="mail" class="w-6 h-6 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">Email</h5>
+                                    <p class="text-teal-100">citas@vudental.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i data-lucide="map-pin" class="w-6 h-6 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">Dirección</h5>
+                                    <p class="text-teal-100">Av. Principal 123, Colonia Centro, Ciudad, CP 00000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <div class="flex gap-4">
+                            <a href="#" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                            <a href="#" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                            <a href="#" class="p-2 bg-white/20 rounded-full hover:bg-white/30 transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="lg:w-3/5 p-10 lg:p-16 relative">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8">Agenda tu Cita</h2>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="success-message" class="hidden absolute inset-0 bg-white flex-col items-center justify-center p-10 text-center z-20">
+                        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 animate-bounce">
+                            <i data-lucide="check" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">¡Solicitud Enviada!</h3>
+                        <p class="text-gray-600">Gracias por contactar a Vu Dental. Nuestro equipo te llamará pronto para confirmar tu horario.</p>
+                        <button onclick="resetForm()" class="mt-6 text-primary font-bold hover:underline">Enviar otra solicitud</button>
+                    </div>
+
+                    <form id="booking-form" onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Nombre Completo</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-teal-200 outline-none transition" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-teal-200 outline-none transition" placeholder="(000) 000-0000">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tipo de Tratamiento</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-teal-200 outline-none transition bg-white">
+                                <option>Chequeo General / Limpieza</option>
+                                <option>Blanqueamiento</option>
+                                <option>Ortodoncia</option>
+                                <option>Dolor / Urgencia</option>
+                                <option>Implantes</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Mensaje (Opcional)</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-teal-200 outline-none transition" placeholder="¿Prefieres un horario en la mañana o tarde?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary text-white font-bold py-4 rounded-lg hover:bg-secondary transition shadow-lg transform hover:-translate-y-1">
+                            Confirmar Solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                         <i data-lucide="smile" class="w-6 h-6 text-primary"></i>
+                         <span class="text-xl font-bold">Vu Dental</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Cuidando sonrisas con pasión y tecnología desde 2010. Tu salud es nuestra prioridad.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-primary transition">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-primary transition">Servicios</a></li>
+                        <li><a href="#nosotros" class="hover:text-primary transition">Doctores</a></li>
+                        <li><a href="#contacto" class="hover:text-primary transition">Agendar Cita</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">Limpieza Dental</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Blanqueamiento</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Implantes</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Ortodoncia</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Horario</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between"><span>Lunes - Viernes:</span> <span>8am - 8pm</span></li>
+                        <li class="flex justify-between"><span>Sábado:</span> <span>9am - 2pm</span></li>
+                        <li class="flex justify-between text-primary"><span>Domingo:</span> <span>Cerrado</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2023 Vu Dental Clínica. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Form Handling
+        function handleSubmit(e) {
+            e.preventDefault();
+            // Simulate sending data
+            const button = e.target.querySelector('button');
+            const originalText = button.innerText;
+            button.innerText = 'Enviando...';
+            button.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('success-message').classList.remove('hidden');
+                document.getElementById('success-message').classList.add('flex');
+                button.innerText = originalText;
+                button.disabled = false;
+            }, 1500);
+        }
+
+        function resetForm() {
+            document.getElementById('booking-form').reset();
+            document.getElementById('success-message').classList.add('hidden');
+            document.getElementById('success-message').classList.remove('flex');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-opacity-95', 'backdrop-blur-sm');
+            } else {
+                nav.classList.remove('bg-opacity-95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html>
